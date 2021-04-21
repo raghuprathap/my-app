@@ -1,8 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { useAddToHomescreenPrompt } from "./useAddToHomescreenPrompt";
 
 function App() {
+  const [isInstalled] = useAddToHomescreenPrompt();
+  useEffect(() => {
+    console.log(isInstalled);
+  }, [isInstalled]);
   return (
     <div className="App">
       <header className="App-header">
